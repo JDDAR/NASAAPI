@@ -1,0 +1,50 @@
+@use "../variables" as v;
+
+.content-Img {
+  z-index: 1;
+  width: 70%;
+  height: 100vh;
+  position: fixed;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+.content-info {
+  z-index: 2;
+  position: absolute;
+  height: 100vh;
+  display: flex;
+  color: v.$color-font;
+
+  &__left {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    &__text {
+      position: absolute;
+      bottom: 50px;
+    }
+  }
+  &__right {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: v.$color-font;
+    padding-top: 80px;
+    &__contentText {
+      width: 100%;
+      background: rgba($color: #303030, $alpha: 0.8);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      padding: 35px;
+      border-radius: 12px;
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+      }
+    }
+  }
+}

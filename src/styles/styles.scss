@@ -1,0 +1,13 @@
+@use "variables" as v;
+@use "components";
+@use "format";
+
+body {
+  font-family: v.$font-family;
+}
+
+.container {
+  width: 80%;
+  position: relative;
+  margin: auto;
+}
