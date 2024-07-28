@@ -42,8 +42,13 @@ const Content = ({ data, fetchAPIData }) => {
           </section>
         </article>
       </section>
-
-      {showModal && <Modal data={data} toggleModal={toggleModal} />}
+      <Modal showModal={showModal} toggleModal={toggleModal}>
+        <img
+          src={data.hdurl}
+          alt={data.title || "Imagen de la NASA"}
+          className="modal__content__img"
+        />
+      </Modal>{" "}
     </>
   );
 };
