@@ -43,7 +43,16 @@
       border-radius: 12px;
       h2 {
         font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+      h3 {
+        font-weight: 500;
+        opacity: 0.5;
         margin-bottom: 25px;
+      }
+      p {
+        font-weight: 300;
+        font-size: 1.2rem;
       }
     }
   }

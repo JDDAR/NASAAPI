@@ -10,16 +10,14 @@ const Content = (props) => {
       <section className="content-info container">
         <article className="content-info__left">
           <div className="content-info__left__text">
-            <p>
-              This NASA/ESA Hubble Space Telescope image features the majestic
-              spiral galaxy NGC 3430.
-            </p>
-            <p>ESA/Hubble & NASA, C. Kilpatrick</p>
+            <p>{data?.title || "Imagen de la nasa "}</p>
+            <p>{data?.copyright || "Imagen de la NASA"}</p>
           </div>
         </article>
         <article className="content-info__right">
           <section className="content-info__right__contentText">
             <h2>{data?.title || "No title Available"}</h2>
+            <h3>{data?.date}</h3>
             <p>{data?.explanation || "No Explication Avaible"} </p>
           </section>
         </article>
@@ -31,6 +29,8 @@ const Content = (props) => {
 // Definir las PropTypes
 Content.propTypes = {
   data: PropTypes.shape({
+    copyright: PropTypes.string,
+    date: PropTypes.string,
     hdurl: PropTypes.string,
     title: PropTypes.string,
     explanation: PropTypes.string,
