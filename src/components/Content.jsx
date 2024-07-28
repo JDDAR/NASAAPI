@@ -1,7 +1,17 @@
+//ICONS
+import { IoOpen, IoRefreshCircleSharp } from "react-icons/io5";
 import PropTypes from "prop-types";
+import { useState } from "react";
+import Modal from "./Modal";
 
-const Content = (props) => {
-  const { data } = props;
+const Content = ({ data, fetchAPIData }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+    console.log("Activando Modal");
+  };
+
   return (
     <>
       <div className="content-Img">
@@ -10,6 +20,16 @@ const Content = (props) => {
       <section className="content-info container">
         <article className="content-info__left">
           <div className="content-info__left__text">
+            <div className="content-info__left__icons">
+              <IoRefreshCircleSharp
+                onClick={fetchAPIData}
+                className="content-info__left__icons__icon"
+              />
+              <IoOpen
+                onClick={toggleModal}
+                className="content-info__left__icons__icon"
+              />
+            </div>
             <p>{data?.title || "Imagen de la nasa "}</p>
             <p>{data?.copyright || "Imagen de la NASA"}</p>
           </div>
@@ -22,6 +42,8 @@ const Content = (props) => {
           </section>
         </article>
       </section>
+
+      {showModal && <Modal data={data} toggleModal={toggleModal} />}
     </>
   );
 };
@@ -34,7 +56,8 @@ Content.propTypes = {
     hdurl: PropTypes.string,
     title: PropTypes.string,
     explanation: PropTypes.string,
-  }),
+  }).isRequired,
+  fetchAPIData: PropTypes.func.isRequired,
 };
 
 export default Content;

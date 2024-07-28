@@ -26,6 +26,23 @@
       position: absolute;
       bottom: 50px;
     }
+    &__icons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      &__icon {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        padding: 5px;
+        border-radius: 2px;
+        background: rgba($color: #303030, $alpha: 0.8);
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        font-size: 1.5rem;
+        color: v.$color-font;
+      }
+    }
   }
   &__right {
     width: 50%;
